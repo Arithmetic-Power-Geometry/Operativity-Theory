@@ -1,5 +1,5 @@
 case_id,source_family,external_system,source_case,classification,current_evidence,tcop_role
-DSU_REDIS,Dynamic software update,Redis,key-value preservation across update,FV/EV,"Client-oriented specs explicitly model old/new behavior and post-update/interface-changing properties","Negative/neighbor case; tests whether TCOP adds economy"
+DSU_REDIS,Dynamic software update,Redis,key-value preservation across update,FV/EV,"Paired audit complete: old/new behavior, post-update properties and interface changes are already native to CO-specs","NEGATIVE: tie/loss; TCOP only factors observer closure, no demonstrated advantage"
 IMOP_JDK,Runtime verification,66 Java projects / JDK API specs,evolution-aware re-instrumentation across revisions,EV,"Instrumentation and program revisions are explicitly modeled; all specs are re-monitored","Negative/neighbor case; observer evolution already explicit"
 PULSAR_SCHEMA,Schema evolution,Apache Pulsar,producer-consumer schema compatibility,FV,"Compatibility strategies quantify reader/writer compatibility across schema versions","Fixed-vocabulary embedding case for T17"
 EVOBENCH,Schema evolution,EvoBench NoSQL benchmark,schema evolution workload,FV/TC-candidate,"Public reproducible schema-evolution benchmark; requires case-level inspection for observer dependence","External benchmark candidate; do not count as TC until inspected"

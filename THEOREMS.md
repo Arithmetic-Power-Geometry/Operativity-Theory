@@ -164,3 +164,28 @@ transformation a
 ```
 
 This is a candidate frontier only. It must be reduced against proof-carrying code, reflective logics, proof-producing verification, runtime assurance, interactive proofs, and self-referential verification before any novelty claim.
+
+
+## T14. Reflexive-Certification Novelty Audit
+
+The bare claim that certification/monitoring changes the system being certified is not retained as a novelty primitive. Runtime verification and instrumentation literature explicitly studies monitor interference, observer/probe effects, and instrumentation-induced behavioral change. Likewise, formal logic already has deep theories of self-reference, reflection, and internal provability/certification.
+
+Therefore the following are locked as established-adjacent rather than Operativity-specific foundations:
+- self-certification in the logical sense;
+- certificates as first-class proof objects;
+- certification procedures that consume resources;
+- monitor/instrumentation back-action;
+- observer/probe effects;
+- self-reference alone.
+
+The defensible Operativity nucleus remains the joint formal package:
+1. present certification PC;
+2. transformation-relative future verifier closure;
+3. absolute preservation stability APS;
+4. self-invalidating preservation SIP;
+5. latent invalidator characterization;
+6. verifier-partition stability;
+7. reachability-transfer theorem;
+8. pair-semantic quotient for generated verifiers.
+
+These results should be presented as a unified formal framework unless a stronger irreducible theorem is subsequently established.

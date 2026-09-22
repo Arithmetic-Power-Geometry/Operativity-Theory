@@ -40,6 +40,9 @@ jobs:
       - name: Run specification-economy pilot
         run: python -m src.specification_economy
 
+      - name: Run certification-to-measurement bridge
+        run: python -m src.run_measurement_bridge
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
@@ -47,5 +50,3 @@ jobs:
           path: artifacts/
           if-no-files-found: error
 
-      - name: Run certification-to-measurement bridge
-        run: python -m src.run_measurement_bridge

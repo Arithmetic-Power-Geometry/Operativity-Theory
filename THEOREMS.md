@@ -189,3 +189,35 @@ The defensible Operativity nucleus remains the joint formal package:
 8. pair-semantic quotient for generated verifiers.
 
 These results should be presented as a unified formal framework unless a stronger irreducible theorem is subsequently established.
+
+
+## T15. Relational-Safety Reduction of APS
+
+For a fixed transformation a and complete initial state omega, APS compares the original configuration x with the transformed configuration x_a while quantifying over verifier-generation continuations. This is a relational property of the reference/transformed pair.
+
+Construct a product/augmented transition system whose state contains:
+- the fixed reference configuration x (or its required semantic representation);
+- the evolving transformed complete state;
+- verifier-generator state;
+- any effective representation needed to evaluate currently enabled/generated verifiers on x and x_a.
+
+Define:
+
+```
+BAD iff an enabled/generated verifier distinguishes x from x_a.
+```
+
+Whenever this product construction is effective:
+
+```
+APS(a,omega) iff BAD is unreachable.
+SIP(a,omega) iff PC(a,omega) and BAD is reachable.
+```
+
+Thus APS belongs to the established pattern of relational / k-safety verification reducible by product construction or self-composition to ordinary safety verification. This rules out a general non-reducibility claim based solely on the fact that APS compares pre/post behaviors.
+
+## T16. Consequence for theory status
+
+No general separation theorem can claim that APS is invisible to all conventional safety/reachability representations if those representations are allowed the natural product/augmented state carrying the reference, transformed state, and verifier-generation information.
+
+Any future irreducibility result would therefore require a precisely restricted representation class and proof that the restriction is scientifically justified rather than chosen merely to manufacture separation.

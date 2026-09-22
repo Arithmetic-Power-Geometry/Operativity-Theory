@@ -55,6 +55,9 @@ jobs:
       - name: Run causal diagnostic baseline comparison
         run: python -m src.run_causal_baseline_comparison
 
+      - name: Run externalized-label evaluation
+        run: python -m src.run_external_label_evaluation
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

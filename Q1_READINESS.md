@@ -92,3 +92,13 @@ No exact standard named pattern with this defining semantics was identified in t
 A strict A/B/C audit was applied: transformation; transformation-induced change in observation capability; new observation exposing a compatibility/preservation distinction. Most dynamic-monitoring and schema-evolution examples satisfy only part of this chain. Upgrade-compatibility examples provide close recurrence of the full dependency shape.
 
 This strengthens real-world motivation but means the phenomenon itself cannot be claimed as newly discovered. TCOP remains only a candidate cross-domain formal specification pattern. Strong-Q1 status still requires multiple independent full recurrences plus expert conventional encodings and measurable specification-engineering benefit.
+
+
+## Compatibility-generalization result
+
+T17 establishes a scoped strictness result. Any compatibility semantics determined solely by a preservation pair and a transformation-independent verifier/test family embeds as the fixed-vocabulary case of TCOP. The extension is strict when a transformation makes reachable a new verifier outside the fixed family that distinguishes the pair.
+
+This is a genuine mathematical separation from fixed-vocabulary compatibility, but NOT an expressiveness separation from HyperLTL, temporal logic, product-state verification, dynamic-update logics, or compatibility frameworks that explicitly model future environment/observer evolution.
+
+### Q1 implication
+This improves the theoretical contribution from a mere notation/pattern proposal to a conservative-extension theorem with a constructive strictness witness. Strong-Q1 readiness nevertheless still requires evidence that fixed-vocabulary compatibility is a practically important limitation and that TCOP improves specification engineering on external cases.

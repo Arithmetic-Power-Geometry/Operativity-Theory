@@ -2,10 +2,10 @@ from src.external_label_evaluation import load_labels, evaluate_against_external
 
 def test_labels_are_externalized():
     labels=load_labels()
-    assert set(labels)=={"opentelemetry","oneuptime_v11","confluence_audit"}
+    assert set(labels)=={"opentelemetry","oneuptime_v11","confluence_audit","gcp_datafusion_v3"}
 
 def test_external_label_evaluation_scores_all_methods():
     rows,summary=evaluate_against_external_labels()
-    assert len(rows)==12
+    assert len(rows)==16
     assert "causal_nearest_upstream" in summary
-    assert summary["causal_nearest_upstream"]["n"]==3
+    assert summary["causal_nearest_upstream"]["n"]==4

@@ -3,18 +3,37 @@
     "source": "https://opentelemetry.io/blog/2026/we-broke-the-demo/",
     "source_date": "2026-07-28",
     "blind_label_rationale": "The upgrade changed custom telemetry attribute names from app.* to demo.* across services and broke existing dashboards/queries. A diagnostically relevant observation must therefore inspect raw telemetry identity/attributes rather than only the downstream dashboard.",
-    "relevant_nodes": ["raw_signal", "service_identity", "attribute_mapping"]
+    "relevant_nodes": [
+      "raw_signal",
+      "service_identity",
+      "attribute_mapping"
+    ]
   },
   "oneuptime_v11": {
     "source": "https://oneuptime.com/docs/en/installation/upgrading",
     "source_date": "retrieved 2026-09-22",
     "blind_label_rationale": "v11 rebuilt telemetry storage, renamed serviceId/serviceType to primaryEntityId/primaryEntityType, and automatically migrated dashboards/monitors/alerts. A diagnostic observation should therefore inspect telemetry table/schema migration or migrated query state rather than only the monitor result.",
-    "relevant_nodes": ["table_schema", "migrated_query"]
+    "relevant_nodes": [
+      "table_schema",
+      "migrated_query"
+    ]
   },
   "confluence_audit": {
     "source": "https://support.atlassian.com/confluence/kb/slow-upgrade-due-to-upgradetask1migratelegacyevents-introduced-in-confluence-75/",
     "source_date": "retrieved 2026-09-22",
     "blind_label_rationale": "Advanced Audit Log introduced an explicit upgrade task migrating legacy audit data into a new audit-log format/table. A diagnostic observation should therefore inspect audit format or migration state rather than only the downstream audit view.",
-    "relevant_nodes": ["audit_format", "migration_state"]
+    "relevant_nodes": [
+      "audit_format",
+      "migration_state"
+    ]
+  },
+  "gcp_datafusion_v3": {
+    "source": "https://docs.cloud.google.com/data-fusion/docs/concepts/metrics-overview",
+    "source_date": "retrieved 2026-09-22",
+    "blind_label_rationale": "Google Cloud documents that InstanceV2 monitoring assets must migrate to InstanceV3 by changing resource type, metric paths, and removing labels absent from InstanceV3. Diagnostic observations should therefore inspect resource/metric schema mapping or migrated query state rather than only the downstream dashboard result.",
+    "relevant_nodes": [
+      "resource_metric_schema",
+      "migrated_query"
+    ]
   }
 }

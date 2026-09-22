@@ -1,4 +1,4 @@
-from src.external_causal_cases import oneuptime_case, confluence_audit_case, run_external_cases
+from src.external_causal_cases import oneuptime_case, confluence_audit_case, gcp_datafusion_case, run_external_cases
 from src.causal_observation_synthesis import causal_separator
 
 def test_oneuptime_transfer_case():
@@ -18,3 +18,12 @@ def test_confluence_transfer_case():
 def test_external_cases_both_resolve():
     out=run_external_cases()
     assert all(v["status"]=="CAUSAL_SEPARATOR_FOUND" for v in out.values())
+
+
+def test_gcp_datafusion_transfer_case():
+    l,r,g,o,sym=gcp_datafusion_case()
+    from src.causal_observation_synthesis import causal_separator
+    s=causal_separator(l,r,g,sym,o)
+    assert s is not None
+    assert s.node in {"migrated_query","resource_metric_schema"}
+    assert s.node != "dashboard_result"

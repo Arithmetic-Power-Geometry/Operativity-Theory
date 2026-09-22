@@ -58,6 +58,9 @@ jobs:
       - name: Run externalized-label evaluation
         run: python -m src.run_external_label_evaluation
 
+      - name: Run blind-source diagnostic evaluation
+        run: python -m src.run_blind_label_evaluation
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

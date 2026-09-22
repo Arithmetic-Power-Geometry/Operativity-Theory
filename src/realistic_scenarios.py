@@ -53,7 +53,7 @@ def analyze(name,builder):
     return {"scenario":name,"pc":s.pc(b,a),"aps":s.aps(b,a),
             "sip":s.sip(b,a),"invalidation_latency":s.invalidation_latency(b,a),
             "distinguishing_verifiers":d,
-            "future_verifiers":sorted(s.future_verifiers(a))}
+            "future_verifiers":sorted(s.future_verifiers(a)[0])}
 
 def main():
     OUT.mkdir(exist_ok=True)

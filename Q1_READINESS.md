@@ -85,3 +85,10 @@ Closest-neighbor literature includes property-specification patterns, timed obse
 The remaining candidate gap is **Transformation-Conditioned Observability Preservation (TCOP)**: the preservation obligation is fixed, but the transformation being certified changes the reachable observation/verifier vocabulary over which preservation must hold.
 
 No exact standard named pattern with this defining semantics was identified in the current audit. This is only a candidate gap, not a novelty proof. It must survive external-example mapping and expert baseline encodings.
+
+
+## External recurrence result
+
+A strict A/B/C audit was applied: transformation; transformation-induced change in observation capability; new observation exposing a compatibility/preservation distinction. Most dynamic-monitoring and schema-evolution examples satisfy only part of this chain. Upgrade-compatibility examples provide close recurrence of the full dependency shape.
+
+This strengthens real-world motivation but means the phenomenon itself cannot be claimed as newly discovered. TCOP remains only a candidate cross-domain formal specification pattern. Strong-Q1 status still requires multiple independent full recurrences plus expert conventional encodings and measurable specification-engineering benefit.

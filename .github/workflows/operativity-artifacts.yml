@@ -43,6 +43,9 @@ jobs:
       - name: Run certification-to-measurement bridge
         run: python -m src.run_measurement_bridge
 
+      - name: Run automatic observation synthesis
+        run: python -m src.run_observation_synthesis
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

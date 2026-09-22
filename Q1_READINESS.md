@@ -76,3 +76,12 @@ Do not claim novelty merely because APS names the first distinguishing verifier,
 
 ### Remaining defensible route
 Evaluate Operativity as a transformation-relative specification pattern for evolving observability/certification that compiles to established product-state/hyperproperty verification. The contribution must be demonstrated through specification economy, modeling clarity, reduced specification errors, or user/benchmark evidence—not superior decision power.
+
+
+## Specification-gap audit
+
+Closest-neighbor literature includes property-specification patterns, timed observer-pattern catalogs, HyperLTL, regression verification, reconfigurable monitors, and runtime verification with changing requirements. These cover most ingredients of the framework.
+
+The remaining candidate gap is **Transformation-Conditioned Observability Preservation (TCOP)**: the preservation obligation is fixed, but the transformation being certified changes the reachable observation/verifier vocabulary over which preservation must hold.
+
+No exact standard named pattern with this defining semantics was identified in the current audit. This is only a candidate gap, not a novelty proof. It must survive external-example mapping and expert baseline encodings.

@@ -49,6 +49,9 @@ jobs:
       - name: Run causal observation synthesis
         run: python -m src.run_causal_observation_synthesis
 
+      - name: Run external causal transfer cases
+        run: python -m src.run_external_causal_cases
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

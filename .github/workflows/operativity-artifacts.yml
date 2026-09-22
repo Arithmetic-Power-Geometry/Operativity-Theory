@@ -28,6 +28,9 @@ jobs:
       - name: Test generated-verifier semantic quotient
         run: python -m src.generated_verifiers
 
+      - name: Run APS scalability benchmark
+        run: python -m src.scalability
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

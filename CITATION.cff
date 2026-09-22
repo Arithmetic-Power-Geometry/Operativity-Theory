@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this repository or its results, please cite the work below."
+title: "Certification Under Evolving Observability: Operativity, Latent Invalidators, and Causal Diagnostic Robustness"
+version: "V1"
+date-released: 2026-09-22
+authors:
+  - family-names: "Akhtar"
+    given-names: "Mohammad Amir Khusru"
+    orcid: "https://orcid.org/0000-0002-3432-4199"
+doi: "10.5281/zenodo.22901704"
+url: "https://doi.org/10.5281/zenodo.22901704"
+repository-code: "https://github.com/Arithmetic-Power-Geometry/Operativity-Theory"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Akhtar"
+      given-names: "Mohammad Amir Khusru"
+      orcid: "https://orcid.org/0000-0002-3432-4199"
+  title: "Certification Under Evolving Observability: Operativity, Latent Invalidators, and Causal Diagnostic Robustness"
+  year: 2026
+  doi: "10.5281/zenodo.22901704"
+  url: "https://doi.org/10.5281/zenodo.22901704"

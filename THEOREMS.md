@@ -86,3 +86,40 @@ The genuinely open extension is the multi-verifier / dynamically generated seman
 - APS requires quantification over an unbounded generated verifier family.
 
 The next target is to determine whether this richer APS problem is strictly harder than generator reachability, and under which restrictions it collapses back to reachability.
+
+
+## T10. Augmented-State Collapse of Semantic Expansion
+
+Fix a transformation a and preservation pair (x,x_a). Suppose generated verifier descriptions and all information needed to determine their pair semantics can be represented effectively in an augmented transition state z, with a decidable predicate:
+
+```
+BAD(z) iff z contains/enables a verifier p with [[p]](x) != [[p]](x_a).
+```
+
+Then Generated-Verifier APS reduces to safety/reachability in the augmented transition system:
+
+```
+APS(a,omega) iff no BAD augmented state is reachable after a.
+```
+
+Therefore dynamic creation of new verifier syntax, predicates, or semantic distinctions is not by itself an irreducible Operativity phenomenon whenever it admits such an effective state representation.
+
+## T11. Decision-Regime Transition (new frontier)
+
+Let C(omega) denote the decision class of the APS problem induced by the verifier-generation structure at complete state omega (for example, a class with decidable reachability versus one capable of undecidable reachability).
+
+A transformation a causes a decision-regime transition when:
+
+```
+C(omega) != C(a(omega)).
+```
+
+The strongest case for Operativity is a present-certified transformation satisfying:
+
+```
+PC(a,omega)=true,
+APS-before regime decidable,
+APS-after regime undecidable (or strictly harder under a fixed formal hierarchy).
+```
+
+This is not yet claimed as a novel theorem. It is the next target. The research question is whether transformation-induced changes in verification decidability/complexity yield nontrivial preservation laws beyond standard parameterized verification and dynamic-system model changes.

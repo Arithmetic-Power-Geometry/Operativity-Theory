@@ -118,3 +118,16 @@ T17 survives only in its already restricted form: strict conservative extension 
 Under the frozen full-TC criterion, the external search did not establish a robust set of multiple independent published cases in which the transformation being certified itself creates the later distinguishing observation capability while the preservation obligation remains fixed.
 
 This is recorded as a negative empirical result. On current evidence, TCOP should not be promoted as a strong-Q1 verification-method contribution. Recommended current positioning is a focused formal framework/specification-pattern paper with T17, reproducible software, scoped claims, and explicit negative controls. Reopen the strong-Q1 methods claim only with independent full-TC real systems or substantial controlled specification-engineering evidence.
+
+## 22 September 2026 evidence update
+
+The evaluation has advanced beyond the earlier three-case baseline stage. A fourth source-grounded external evolution case was added and the full workflow passed in run 102. A subsequent distractor-robustness benchmark passed in run 106.
+
+Key measured result from run 106:
+- at 0 distractors, nearest, cheapest, random, and causal selectors all score 4/4;
+- at 5 distractors, nearest = 2/4, cheapest = 0/4, random = 1/4, causal = 4/4;
+- at 10, 25, and 50 distractors, nearest = 2/4, cheapest = 0/4, random = 0/4, causal = 4/4.
+
+This establishes a controlled diagnostic-robustness advantage for the causal nearest-upstream selector within the declared benchmark. It does not establish universal superiority, production-system effectiveness, or a new verification decision procedure. Independent expert annotation and a larger natural external corpus remain the strongest validation extensions.
+
+**Current manuscript gate:** sufficient evidence exists to write the full paper now. For a strong-Q1 submission, the current package is materially stronger than the earlier status, but independent expert/real-system validation would still improve the empirical claim.

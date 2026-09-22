@@ -25,6 +25,9 @@ jobs:
         run: python -m src.run_experiments
       - name: Exhaust finite 2-bit verifier systems
         run: python -m src.exhaustive
+      - name: Test generated-verifier semantic quotient
+        run: python -m src.generated_verifiers
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

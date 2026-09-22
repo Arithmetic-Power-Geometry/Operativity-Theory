@@ -61,6 +61,9 @@ jobs:
       - name: Run blind-source diagnostic evaluation
         run: python -m src.run_blind_label_evaluation
 
+      - name: Run distractor robustness benchmark
+        run: python -m src.run_distractor_benchmark
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

@@ -46,3 +46,6 @@ jobs:
           name: operativity-results
           path: artifacts/
           if-no-files-found: error
+
+      - name: Run certification-to-measurement bridge
+        run: python -m src.run_measurement_bridge

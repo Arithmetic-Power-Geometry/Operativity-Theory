@@ -221,3 +221,14 @@ Thus APS belongs to the established pattern of relational / k-safety verificatio
 No general separation theorem can claim that APS is invisible to all conventional safety/reachability representations if those representations are allowed the natural product/augmented state carrying the reference, transformed state, and verifier-generation information.
 
 Any future irreducibility result would therefore require a precisely restricted representation class and proof that the restriction is scientifically justified rather than chosen merely to manufacture separation.
+
+
+## T17. Fixed-Vocabulary Compatibility Strictness
+
+Let a compatibility semantics depend only on a preservation pair `(x,x_a)` and a transformation-independent verifier family `V0`. TCOP conservatively embeds that semantics by taking `V_a^infinity=V0`.
+
+If there exists a transformation-conditioned future verifier `v* in V_a^infinity minus V0` with `v*(x) != v*(x_a)`, the extension is strict: current/fixed-vocabulary compatibility may hold while APS fails.
+
+A constructive two-transformation witness uses the same reference state, the same transformed ordinary configuration, and the same current verifier family, but different future verifier closures. The fixed-vocabulary semantics gives the same verdict to both transformations; APS distinguishes them.
+
+**Scope restriction.** This is not an expressiveness separation from HyperLTL, temporal logic, product-state verification, or any formalism allowed to encode future observer-generation state. It is a separation from compatibility semantics whose observation/test vocabulary is fixed independently of the transformation.

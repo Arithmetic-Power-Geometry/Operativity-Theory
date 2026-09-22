@@ -111,3 +111,10 @@ The strongest neighboring work includes client-oriented dynamic-software-update 
 T17 survives only in its already restricted form: strict conservative extension of compatibility semantics whose test/verifier vocabulary is fixed independently of the transformation. Rich DSU/RV/temporal/hyperproperty formalisms that model observer evolution are outside this comparison class.
 
 **Theory freeze:** no further primitive hunting. Q1 advancement now requires external empirical specification-engineering evidence.
+
+
+## Make-or-break external TC search
+
+Under the frozen full-TC criterion, the external search did not establish a robust set of multiple independent published cases in which the transformation being certified itself creates the later distinguishing observation capability while the preservation obligation remains fixed.
+
+This is recorded as a negative empirical result. On current evidence, TCOP should not be promoted as a strong-Q1 verification-method contribution. Recommended current positioning is a focused formal framework/specification-pattern paper with T17, reproducible software, scoped claims, and explicit negative controls. Reopen the strong-Q1 methods claim only with independent full-TC real systems or substantial controlled specification-engineering evidence.

@@ -44,3 +44,22 @@ Mathematically coherent and reproducible: YES.
 Potentially publishable as a focused theory/framework paper: YES, after literature and evaluation strengthening.
 Strong-Q1 ready: NOT YET.
 New top-level branch established: NO.
+
+
+## Fair-baseline result
+
+The controlled realistic scenarios were compared against an independently implemented conventional product-state BFS baseline using the same complete state information.
+
+Result:
+- 4/4 safety verdicts agree;
+- 3 controlled scenarios are latent-invalid;
+- 1 stable control remains safe;
+- no decision-power advantage is demonstrated for APS.
+
+This confirms the relational-safety reduction rather than an algorithmic superiority claim.
+
+### Locked claim restriction
+
+Do not claim that APS is a new model-checking algorithm, has greater decision power than product-state reachability, or detects violations unavailable to a conventional verifier supplied with the same product-state model.
+
+Any remaining Q1 contribution must be demonstrated in specification structure, diagnostic information, modeling economy, or another measured dimension against established explanation/verification methods.

@@ -37,6 +37,9 @@ jobs:
       - name: Compare APS with conventional product reachability
         run: python -m src.baseline_comparison
 
+      - name: Run specification-economy pilot
+        run: python -m src.specification_economy
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

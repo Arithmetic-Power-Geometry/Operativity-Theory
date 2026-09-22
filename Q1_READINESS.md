@@ -63,3 +63,16 @@ This confirms the relational-safety reduction rather than an algorithmic superio
 Do not claim that APS is a new model-checking algorithm, has greater decision power than product-state reachability, or detects violations unavailable to a conventional verifier supplied with the same product-state model.
 
 Any remaining Q1 contribution must be demonstrated in specification structure, diagnostic information, modeling economy, or another measured dimension against established explanation/verification methods.
+
+
+## Counterexample-explanation collision audit
+
+Counterexample explanation is already a mature research area, including trace minimization, fault localization, causal explanation, domain-specific explanation, and explanations for relational/hyperproperty violations.
+
+Therefore the diagnostic tuple `(PC, APS, SIP, invalidating verifier, invalidation latency)` is not, by itself, sufficient evidence of Q1 novelty.
+
+### Locked restriction
+Do not claim novelty merely because APS names the first distinguishing verifier, returns a shortest witness, or localizes a latent violation.
+
+### Remaining defensible route
+Evaluate Operativity as a transformation-relative specification pattern for evolving observability/certification that compiles to established product-state/hyperproperty verification. The contribution must be demonstrated through specification economy, modeling clarity, reduced specification errors, or user/benchmark evidence—not superior decision power.

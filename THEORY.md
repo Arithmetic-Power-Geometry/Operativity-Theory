@@ -130,3 +130,22 @@ Transformation
 ## 10. Scope discipline
 
 This repository treats Operativity Theory as a formal research program. It does not claim that a new top-level scientific discipline has already been established.
+
+
+## 11. Generated-verifier extension
+
+When future verifier identities are not fixed in advance, use an effective verifier language L and transformation-conditioned generator G_a(omega). The generated latent invalidator problem asks whether some operationally generated verifier description p satisfies:
+
+```
+[[p]](x) != [[p]](x_a).
+```
+
+For a fixed preservation pair define the pair-semantic equivalence:
+
+```
+p ~_(x,x_a) q
+iff
+([[p]](x),[[p]](x_a)) = ([[q]](x),[[q]](x_a)).
+```
+
+APS depends only on the reachable pair-semantic quotient, not on verifier syntax itself. See GENERATED_VERIFIERS.md.

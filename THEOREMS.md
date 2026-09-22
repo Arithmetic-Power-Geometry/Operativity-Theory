@@ -123,3 +123,44 @@ APS-after regime undecidable (or strictly harder under a fixed formal hierarchy)
 ```
 
 This is not yet claimed as a novel theorem. It is the next target. The research question is whether transformation-induced changes in verification decidability/complexity yield nontrivial preservation laws beyond standard parameterized verification and dynamic-system model changes.
+
+
+## T12. Decision-Regime Transition Is Not Retained as a Novel Primitive
+
+A transformation can move a system between verification classes with different decidability or complexity. However, dynamic software update, parameterized verification, self-modifying-system verification, and related formal-methods literature already study verification under changing system models and identify restricted decidable versus general undecidable classes.
+
+Therefore the bare condition:
+
+```
+C(omega) != C(a(omega))
+```
+
+is locked as insufficient for an independent Operativity theory.
+
+## T13. Reflexive Certification Frontier
+
+The next candidate is explicitly reflexive. Introduce a certification procedure k for a preservation claim P(a,omega). Executing k is itself an admissible physical/computational transformation:
+
+```
+k : omega_a -> omega_{a,k}.
+```
+
+The certification is reflexively stable only if the act of establishing the certificate does not create a reachable verifier/condition that defeats the certified claim.
+
+A minimal form is:
+
+```
+RC(k,a,omega) := Cert_k(P(a,omega))
+                  and APS(a,omega_{a,k}).
+```
+
+The key dependency is now:
+
+```
+transformation a
+ -> certification action k
+ -> changed verifier-generating structure
+ -> validity of the certificate produced by k.
+```
+
+This is a candidate frontier only. It must be reduced against proof-carrying code, reflective logics, proof-producing verification, runtime assurance, interactive proofs, and self-referential verification before any novelty claim.

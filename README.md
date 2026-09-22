@@ -1,55 +1,84 @@
-# Operativity Theory
+# Certification Under Evolving Observability
 
-Operativity Theory studies preservation claims when the transformation being certified can change which verifiers become realizable in the future.
+This repository contains the software, formal specification, tests, external case abstractions, and reproducible computational evaluation for:
 
-Core distinction:
+**Mohammad Amir Khusru Akhtar (2026). _Certification Under Evolving Observability: Operativity, Latent Invalidators, and Causal Diagnostic Robustness_. Version V1. Zenodo. https://doi.org/10.5281/zenodo.22901704**
 
-```
-certified now != stable under verifiers the transformation itself can enable
-```
+## Overview
 
-The repository contains:
-- a frozen mathematical specification,
-- theorem statements and proof sketches,
-- a finite exact checker,
-- reproducible experiments,
-- GitHub Actions workflows that generate machine-readable artifacts.
+The study examines preservation claims when a transformation can change which verifiers become realizable later.
 
-## Core objects
-
-A complete state is `omega = (x, g)`, where `x` is the ordinary configuration and `g` is the verifier-generating structure.
-
-For a transformation `a`:
-- `PC(a, omega)`: Present Certification.
-- `APS(a, omega)`: Absolute Preservation Stability.
-- `SIP(a, omega)`: Self-Invalidating Preservation, defined by `PC && !APS`.
-- `IL(a, omega)`: Invalidation Latency.
-
-The characteristic dependency is:
+A complete state is represented as
 
 ```
-Transformation -> Verifier Genesis -> Retrospective Distinction -> Self-Invalidation
+omega = (x, g)
 ```
+
+where `x` is the ordinary system configuration and `g` is verifier-generating structure.
+
+The central quantities are:
+
+- **PC(a, omega)** — Present Certification: preservation under currently realizable verifiers.
+- **APS(a, omega)** — Absolute Preservation Stability: preservation under verifiers reachable after the transformation and admissible continuation.
+- **SIP(a, omega)** — Self-Invalidating Preservation: `PC && !APS`.
+- **IL(a, omega)** — Invalidation Latency: minimum continuation depth at which a distinguishing verifier becomes reachable.
+
+For effective product-state representations, APS reduces to ordinary BAD-state reachability. The framework is therefore a transformation-relative certification and diagnostic layer, not a replacement model checker and not an expressiveness-separation claim against general temporal, hyperproperty, or product-state verification.
+
+## Main formal results
+
+The repository includes formal statements and proofs/sketches for:
+
+- latent invalidator characterization;
+- verifier-partition stability;
+- singleton reachability transfer;
+- decidability and undecidability transfer results;
+- augmented relational-safety reduction;
+- fixed-vocabulary compatibility strictness under transformation-conditioned future observability.
+
+See `THEORY.md`, `THEOREMS.md`, `DECIDABILITY_BOUNDARY.md`, and `COMPATIBILITY_GENERALIZATION.md`.
+
+## Computational evaluation
+
+The reproducible evaluation reported in the paper includes:
+
+- exhaustive enumeration of **144 finite systems**;
+- **100** PC-true systems;
+- **64** APS-true systems;
+- **36** SIP cases;
+- **36** explicit counterexamples to `PC => APS`;
+- **0** latent-invalidator characterization violations;
+- **4/4** verdict agreement with an independently implemented product-state BFS baseline on controlled evolution scenarios;
+- four externally grounded evolution cases;
+- a distractor-robustness benchmark using 0, 5, 10, 25, and 50 non-causal observables.
+
+In the distractor benchmark, causal nearest-upstream selection retained **100% diagnostic relevance** at every tested distractor level. At 5 distractors, nearest, cheapest, and random difference baselines scored 50%, 0%, and 25%, respectively. At 10, 25, and 50 distractors, they scored 50%, 0%, and 0%.
+
+These results are controlled benchmark results. They do not establish universal production-system superiority or a new model-checking decision procedure.
 
 ## Reproducibility
 
-Run locally:
+Run the computational evaluation locally with:
 
 ```bash
 python -m src.run_experiments
 ```
 
-The workflow `.github/workflows/operativity-artifacts.yml` runs the exact benchmark and uploads `operativity-results` as a GitHub Actions artifact.
+The GitHub Actions workflow at `.github/workflows/operativity-artifacts.yml` executes the test suite and computational evaluation and uploads machine-readable outputs.
 
-## Latest reproducible evaluation
+## Repository structure
 
-The current workflow includes exact finite validation, a conventional product-state reachability baseline, external evolution-case abstractions, causal observation synthesis, blind/source-grounded label evaluation, and a distractor-robustness benchmark.
+- `src/` — implementation and experiment runners
+- `tests/` — automated tests
+- `external_encodings/` — external evolution-case encodings
+- `external_case_corpus.csv` — external case corpus
+- `external_ground_truth_labels.json` — source-grounded diagnostic labels
+- `external_blind_labels.json` — blind-label evaluation data
+- `THEORY.md` — formal definitions
+- `THEOREMS.md` — theorem package
+- `ALGORITHM.md` — computational procedures
+- `SPECIFICATION_PATTERN.md` — transformation-relative certification pattern
 
-Canonical workflow evidence reported from run 106 (commit `8d2a3e23bcb0574b93d3e469458198fee5d81259`):
-- 144 finite systems exhaustively enumerated;
-- 0 latent-invalidator characterization violations;
-- 36 explicit counterexamples to `PC => APS`;
-- 4/4 verdict agreement with an independent product-state BFS baseline on the controlled scenarios;
-- causal upstream selection retained 100% diagnostic relevance across 0, 5, 10, 25, and 50 non-causal distractors, while simple nearest/cheapest/random difference baselines degraded once distractors were added.
+## Citation
 
-These results support the repository's intended positioning: Operativity is a transformation-relative certification and diagnostic specification layer that compiles to established verification backends when an effective product representation exists. The repository does not claim a new model-checking decision procedure or an expressiveness separation from general temporal, hyperproperty, or product-state verification.
+Akhtar, M. A. K. (2026). *Certification Under Evolving Observability: Operativity, Latent Invalidators, and Causal Diagnostic Robustness* (Version V1). Zenodo. https://doi.org/10.5281/zenodo.22901704

@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Any, Dict, Iterable, Mapping, Sequence
 
 from src.causal_observation_synthesis import causal_separator, opentelemetry_causal_case
-from src.external_causal_cases import oneuptime_case, confluence_audit_case
+from src.external_causal_cases import oneuptime_case, confluence_audit_case, gcp_datafusion_case
 
 @dataclass(frozen=True)
 class BaselineResult:
@@ -35,6 +35,7 @@ def case_bundle():
     oleft,oright,ograph,oobs=opentelemetry_causal_case()
     one_l,one_r,one_g,one_o,one_sym=oneuptime_case()
     con_l,con_r,con_g,con_o,con_sym=confluence_audit_case()
+    gcp_l,gcp_r,gcp_g,gcp_o,gcp_sym=gcp_datafusion_case()
     return {
         "opentelemetry": {
             "left":oleft,"right":oright,"graph":ograph,"obs":oobs,"symptom":"dashboard",
@@ -50,6 +51,11 @@ def case_bundle():
             "left":con_l,"right":con_r,"graph":con_g,"obs":con_o,"symptom":con_sym,
             "relevant":{"migration_state","audit_format"},
             "costs":{"event_semantics":0.5,"audit_format":1.0,"migration_state":1.5,"audit_view":0.0}
+        },
+        "gcp_datafusion_v3": {
+            "left":gcp_l,"right":gcp_r,"graph":gcp_g,"obs":gcp_o,"symptom":gcp_sym,
+            "relevant":{"resource_metric_schema","migrated_query"},
+            "costs":{"metric_semantics":0.5,"resource_metric_schema":1.0,"migrated_query":1.5,"dashboard_result":0.0}
         },
     }
 

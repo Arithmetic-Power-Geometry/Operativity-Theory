@@ -102,3 +102,12 @@ This is a genuine mathematical separation from fixed-vocabulary compatibility, b
 
 ### Q1 implication
 This improves the theoretical contribution from a mere notation/pattern proposal to a conservative-extension theorem with a constructive strictness witness. Strong-Q1 readiness nevertheless still requires evidence that fixed-vocabulary compatibility is a practically important limitation and that TCOP improves specification engineering on external cases.
+
+
+## Final T17 audit — theory frozen
+
+The strongest neighboring work includes client-oriented dynamic-software-update specifications, behavioral DSU verification, changing-requirement runtime verification, and instrumentation-driven evolution-aware runtime verification. These eliminate broad claims of novelty in update correctness, observer evolution, relational old/new behavior, and evolution-aware monitoring.
+
+T17 survives only in its already restricted form: strict conservative extension of compatibility semantics whose test/verifier vocabulary is fixed independently of the transformation. Rich DSU/RV/temporal/hyperproperty formalisms that model observer evolution are outside this comparison class.
+
+**Theory freeze:** no further primitive hunting. Q1 advancement now requires external empirical specification-engineering evidence.

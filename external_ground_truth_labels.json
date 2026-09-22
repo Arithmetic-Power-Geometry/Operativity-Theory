@@ -1,0 +1,14 @@
+{
+  "opentelemetry": {
+    "relevant_nodes": ["raw_signal", "service_identity", "attribute_mapping"],
+    "basis": "external_case_abstraction"
+  },
+  "oneuptime_v11": {
+    "relevant_nodes": ["migrated_query", "table_schema"],
+    "basis": "external_case_abstraction"
+  },
+  "confluence_audit": {
+    "relevant_nodes": ["migration_state", "audit_format"],
+    "basis": "external_case_abstraction"
+  }
+}
